@@ -1,7 +1,8 @@
 Railsrumble::Application.routes.draw do
+  get "home/index"
   resources :tasks
   
-  root :to => "tasks#index"
+  root :to => "home#index"
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
