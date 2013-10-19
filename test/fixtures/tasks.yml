@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  description: MyString
+  type: 
+  priority: 1
+  time: 2013-10-19 10:39:51
+
+two:
+  description: MyString
+  type: 
+  priority: 1
+  time: 2013-10-19 10:39:51
