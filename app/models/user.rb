@@ -9,9 +9,11 @@ class User < ActiveRecord::Base
   validates :email, :presence => true
 
   def tasks(params={})
-    return Task.where(user: self, category_id: params[:category]) if params[:category]
-    return Task.where(user: self, type: params[:type]) if params[:type]
-    return Task.where(user: self, priority: params[:priority]) if params[:priority]
-    return Task.where(user: self)
+    conditions = {:user => self}
+    conditions[:category] = params[:category] if params[:category]
+    conditions[:task_type] = params[:task_type] if params[:task_type]
+    conditions[:priority] = params[:priority] if params[:priority]
+
+    return Task.where(conditions)
   end
 end

@@ -17,7 +17,7 @@
     <% @tasks.each do |task| %>
       <tr>
         <td><%= task.description %></td>
-        <td><%= task.type %></td>
+        <td><%= task.task_type %></td>
         <td><%= task.priority %></td>
         <td><%= task.time %></td>
         <td><%= link_to 'Show', task %></td>
