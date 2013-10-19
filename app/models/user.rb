@@ -3,12 +3,15 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :categories
-  has_many :tasks, :through => :categories
+  has_many :categories, :dependent => :destroy
+  has_many :tasks, :order => :priority, :through => :categories, :dependent => :destroy
 
-  def tasks(params)
-    return Task.where(user_id: self.id, category_id: params[:category]) if params[:category]
-    return Task.where(user_id: self.id, type: params[:type]) if params[:type]
-    return Task.where(user_id: self.id, priority: params[:priority]) if params[:priority]
+  validates :name, :presence => true
+
+  def tasks(params={})
+    return Task.where(user: self, category_id: params[:category]) if params[:category]
+    return Task.where(user: self, type: params[:type]) if params[:type]
+    return Task.where(user: self, priority: params[:priority]) if params[:priority]
+    return Task.where(user: self)
   end
 end
