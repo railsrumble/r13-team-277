@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_many :categories, :dependent => :destroy
   has_many :tasks, :order => :priority, :through => :categories, :dependent => :destroy
 
-  validates :name, :presence => true
+  validates :email, :presence => true
 
   def tasks(params={})
     return Task.where(user: self, category_id: params[:category]) if params[:category]
