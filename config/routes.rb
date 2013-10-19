@@ -1,8 +1,9 @@
 Railsrumble::Application.routes.draw do
   resources :tasks
+  
+  root :to => "tasks#index"
 
-  resources :users
-
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
