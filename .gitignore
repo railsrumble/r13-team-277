@@ -17,3 +17,5 @@
 
 # Ignore schema files
 db/schema.rb
+
+*~
