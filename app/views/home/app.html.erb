@@ -1,17 +1,23 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
- <div class = "container">
-    <div class = "jumbotron">
+<style type="text/css">
+    body{
+
+        background-image: url("/images/retina_wood.png");
+    }
+</style>
+ <div class = "container" id = "differentBG">
+    
         <div ng-app="toDoApp">
             <section ng-controller="TodoController">
 
             <form  role="search" class="navbar-form" ng-submit="createTodo()">
                 <input  class="form-control todoInput" placeholder="To Do" ng-model="newTodo" autofocus />
                 <div class="btn-group" data-toggle="buttons" ng-repeat="priority in priorties">
-  <label class="btn btn-primary">
-    <input type="radio" name="priorties"  value="{{priority.priority}}"> {{priority.text}}
-  </label>
-</div>
+          <label class="btn btn-primary">
+            <input type="radio" name="priorties"  value="{{priority.priority}}"> {{priority.text}}
+          </label>
+        </div>
             </form>
         
         <section ng-show="todos.length" ng-cloak>
@@ -39,7 +45,7 @@
                 </footer>
             </section>
         </div>
-    </div>
+    
 </div>
 <script src="js/vendor/angular-resource.js"></script>
 <script src="js/main.js"></script>

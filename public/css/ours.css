@@ -131,6 +131,7 @@ ul.sticky li h2{
   word-wrap:break-word;
 }
 
+<<<<<<< HEAD
 ul.sticky li{
   -webkit-transform: rotate(-6deg);
   -o-transform: rotate(-6deg);
@@ -184,3 +185,10 @@ li.done{
 li.done h2{
   text-decoration: line-through;
 }
+=======
+.todoInput:focus{
+
+        background: white;
+        opacity: .8;
+}
+>>>>>>> ecfc09c19969bda71fc86d819fc4db2ea4be766d
