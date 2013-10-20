@@ -1,4 +1,4 @@
-<link href="/css/ours.css" rel="stylesheet" media="screen">
+
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
 <div ng-app="toDoApp">
     <section ng-controller="TodoController">
@@ -6,6 +6,11 @@
 
             <form  role="search" class="navbar-form" ng-submit="createTodo()">
                 <input  class="form-control todoInput" placeholder="To Do" ng-model="newTodo" autofocus />
+                <div class="btn-group" data-toggle="buttons" ng-repeat="priority in priorties">
+  <label class="btn btn-primary">
+    <input type="radio" name="priorties"  value="{{priority.priority}}"> {{priority.text}}
+  </label>
+</div>
             </form>
         
         <section ng-show="todos.length" ng-cloak>
@@ -17,6 +22,7 @@
                     <h2 ng-dblclick="editTodo(todo)">{{todo.description}}</h2>
 
                     <p>{{todo.task_type}}</p>
+                    <img src=>
                 </a>
             </li></ul>
 

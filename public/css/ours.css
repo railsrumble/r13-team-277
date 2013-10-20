@@ -9,20 +9,19 @@ p{
 
 	background-color: blue;
 }
-#todoInput,
-.edit {
-        position: relative;
-        margin: 0;
+.todoInput
+ {
+        height:3em;
         width: 100%;
-        font-size: 24px;
+        font-size: 2.4em;
         font-family: inherit;
-        line-height: 1.4em;
+        line-height: 2.5em;
         border: 0;
         outline: none;
         color: inherit;
-        padding: 6px;
         border: 1px solid #999;
         box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+        background: rgba(0, 0, 0, 0.02);
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         -ms-box-sizing: border-box;
@@ -35,15 +34,3 @@ p{
         font-smoothing: antialiased;
 }
 
-#todoInput {
-        padding: 16px 16px 16px 60px;
-        border: none;
-        background: rgba(0, 0, 0, 0.02);
-        z-index: 2;
-        box-shadow: none;
-}
-.todoInput{
-        width:80%;
-        display: block;
-
-}

@@ -3,9 +3,16 @@
     var todos = $scope.todos = [];
     var Task=$resource("/tasks");
     todos = $scope.todos=Task.query();
+    $scope.priorties=[
+            {"priority":1,"text":"High"},
+            {"priority":2,"text":"Medium"},
+            {"priority":3,"text":"Low"}
+        ];
     
     
     $scope.newTodo = '';
+
+    $scope.priority=2;
     $scope.editedTodo = null;
 
     $scope.$watch('todos', function (newValue, oldValue)
@@ -28,8 +35,8 @@
         {
             return;
         }
-        var newTask= new Task({description: newTodo,priority:Math.floor(Math.random() *5)+1,
-            task_type: "Type"+Math.floor(Math.random() *500)+1}
+        var newTask= new Task({description: newTodo,
+            priority:priority}
             );
         newTask.$save();
         todos.push(newTask);
