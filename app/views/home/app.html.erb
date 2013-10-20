@@ -12,7 +12,7 @@
             <section ng-controller="TodoController">
 
             <form  role="search" class="navbar-form" ng-submit="createTodo()">
-                <input  class="form-control todoInput" placeholder="To Do" ng-model="newTodo" autofocus />
+                <input  class="form-control todoInput" placeholder="New Task" ng-model="newTodo" autofocus />
                 <div class="btn-group" data-toggle="buttons" ng-repeat="priority in priorties">
           <label class="btn btn-primary">
             <input type="radio" name="priorties"  value="{{priority.priority}}"> {{priority.text}}
@@ -21,7 +21,7 @@
             </form>
         
         <section ng-show="todos.length" ng-cloak>
-            <button type="button" ng-disabled="allCompleted" ng-click="completeAll()" class="btn btn-default">Mark all as complete</button>
+            <button id="markcompleted" type="button" ng-disabled="allCompleted" ng-click="completeAll()" class="btn btn-default">Mark all as complete</button>
             
             <ul ui-sortable class= "sticky">
                 <li ng-repeat="todo in todos" ng-class="{done:isCompleted(todo)}">

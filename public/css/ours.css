@@ -71,6 +71,7 @@ body{
         border: 0;
         outline: none;
         color: inherit;
+        font-style: italic;
         border: 1px solid #999;
         box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
         background: rgba(0, 0, 0, 0.02);
@@ -118,7 +119,7 @@ ul.sticky li{
   position: relative;
   text-decoration:none;
   color:#000;
-  background:#ffc;
+  background: #FFD25A;
   display:block;
   height:10em;
   
@@ -163,7 +164,7 @@ ul.sticky li:nth-child(even){
   -moz-transform:rotate(4deg);
   position:relative;
   top:5px;
-  background:#cfc;
+  background:#B7CC44;
 }
 ul.sticky li:nth-child(3n){
   -o-transform:rotate(-3deg);
@@ -171,7 +172,7 @@ ul.sticky li:nth-child(3n){
   -moz-transform:rotate(-3deg);
   position:relative;
   top:-5px;
-  background:#ccf;
+  background:#00B9CC;
 }
 ul.sticky li:nth-child(5n) {
   -o-transform:rotate(5deg);
@@ -201,4 +202,8 @@ li.done h2{
 
         background: white;
         opacity: .8;
+}
+
+#markcompleted {
+  margin-left: 15px;
 }
