@@ -1,7 +1,7 @@
 ﻿toDoApp.controller('TodoController', function TodoController($scope, $resource, $http,  filterFilter)
 {
     var todos = $scope.todos = [];
-    var Task=$resource("/tasks");
+    var Task=$resource("/tasks/:id",{id:"@id"});
     todos = $scope.todos=Task.query();
     $scope.priorties=[
             {"priority":1,"text":"High"},
