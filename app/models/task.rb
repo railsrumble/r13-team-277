@@ -1,4 +1,5 @@
 class Task < ActiveRecord::Base
+  include TaskType
   belongs_to :user
   belongs_to :category
 
