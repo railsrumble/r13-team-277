@@ -1,7 +1,7 @@
 ﻿toDoApp.controller('TodoController', function TodoController($scope, $resource, $http,  filterFilter)
 {
     var todos = $scope.todos = [];
-    var Task=$resource("/tasks/:id",{id:"@id"});
+    var Task=$resource("/tasks/:id",{id:"@id"},{update:{method:"PUT"}});
     todos = $scope.todos=Task.query();
     $scope.priorties=[
             {"priority":1,"text":"High"},
@@ -63,15 +63,14 @@
     $scope.complete = function (todo)
     {
         todo.completed=!todo.completed;
-        todo.$save();
+        todo.$update();
     };
 
     $scope.completeAll = function ()
     {
         todos.forEach(function (todo)
         {
-            todo.completed = true;
-            todo.$save();
+            complete();
         });
         
     };
