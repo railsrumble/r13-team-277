@@ -9,7 +9,7 @@ p{
 
 	background-color: blue;
 }
-#new-todo,
+#todoInput,
 .edit {
         position: relative;
         margin: 0;
@@ -35,10 +35,15 @@ p{
         font-smoothing: antialiased;
 }
 
-#new-todo {
+#todoInput {
         padding: 16px 16px 16px 60px;
         border: none;
         background: rgba(0, 0, 0, 0.02);
         z-index: 2;
         box-shadow: none;
+}
+.todoInput{
+        width:80%;
+        display: block;
+
 }

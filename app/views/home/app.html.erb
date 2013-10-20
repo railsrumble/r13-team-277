@@ -2,12 +2,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
 <div ng-app="toDoApp">
     <section ng-controller="TodoController">
-        <header>
+        
 
-            <form  role="search" class="navbar-form pull-left" ng-submit="createTodo()">
-                <input  class="form-control" placeholder="To Do" ng-model="newTodo" autofocus>
+            <form  role="search" class="navbar-form" ng-submit="createTodo()">
+                <input  class="form-control todoInput" placeholder="To Do" ng-model="newTodo" autofocus />
             </form>
-        </header>
+        
         <section ng-show="todos.length" ng-cloak>
             <input type="checkbox" ng-model="allCompleted" ng-click="completeAll(allCompleted)">
             <label for="toggle-all">Mark all as complete</label>
