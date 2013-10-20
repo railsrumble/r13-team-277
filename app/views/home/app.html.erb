@@ -12,7 +12,8 @@ body{
         <section ng-controller="TodoController">
 
             <form  role="search" class="navbar-form" ng-submit="createTodo()">
-                <input  class="form-control todoInput" placeholder="New Task" ng-model="newTodo" autofocus />
+
+                <input  class="form-control todoInput" placeholder="New Task" ng-model="newTodo" autofocus maxlength="60" />
             </form>
             <button type="button" ng-disabled="allCompleted" ng-click="completeAll()" class="btn btn-default mark">Mark all as complete</button>
 
