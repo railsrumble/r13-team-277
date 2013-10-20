@@ -16,13 +16,12 @@ font-family:"Reenie Beanie",arial,sans-serif;
   padding:3em;
 }
 ul.sticky li{
-  
-
   text-decoration:none;
   color:#000;
   background:#ffc;
   display:block;
   height:10em;
+  
   width:10em;
   padding:1em;
   margin:1em;
@@ -33,19 +32,30 @@ ul.sticky li{
   -moz-transition:-moz-transform .15s linear;
   -o-transition:-o-transform .15s linear;
   -webkit-transition:-webkit-transform .15s linear;
+  overflow:hidden;
 }
 
 ul.sticky li h2{
 	font-family:"Reenie Beanie",arial,sans-serif;
-  font-size:140%;
+  font-size:1.5em;
   font-weight:bold;
-  padding-bottom:10px;
+  margin:10px;
+  word-wrap:break-word;
 }
 
 ul.sticky li{
   -webkit-transform: rotate(-6deg);
   -o-transform: rotate(-6deg);
   -moz-transform:rotate(-6deg);
+}
+ul.sticky li img{
+  height:32px;
+  width:32px;
+  float:left;
+  position:absolute;
+  bottom:3px;
+  left:3px;
+  border:none;
 }
 ul.sticky li:nth-child(even){
   -o-transform:rotate(4deg);
@@ -79,4 +89,22 @@ ul.sticky li:hover,ul.sticky li:focus{
   -o-transform: scale(1.25);
   position:relative;
   z-index:5;
+}
+.progress{
+  
+  float:right;
+  position:absolute;
+  right:3px;
+  bottom:3px;
+  margin-bottom:0;
+}
+.progress.vertical {
+
+    width: 15px;
+    height: 100px;
+    background: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border: none;
 }

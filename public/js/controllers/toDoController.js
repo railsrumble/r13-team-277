@@ -36,7 +36,7 @@
             return;
         }
         var newTask= new Task({description: newTodo,
-            priority:priority}
+            priority:$scope.priority}
             );
         newTask.$save();
         todos.push(newTask);
@@ -60,12 +60,31 @@
             return !val.completed;
         });
     };
+    $scope.complete = function (todo)
+    {
+        todo.completed=!todo.completed;
+        todo.$save();
+    };
 
-    $scope.completeAll = function (completed)
+    $scope.completeAll = function ()
     {
         todos.forEach(function (todo)
         {
-            todo.completed = completed;
+            todo.completed = true;
+            todo.$save();
         });
+        
+    };
+    $scope.isCompleted = function (todo)
+    {
+        
+         return   todo.completed;
+        
+    };
+     $scope.isPending = function (todo)
+    {
+        
+         return   !todo.completed;
+        
     };
 });

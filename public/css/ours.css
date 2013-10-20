@@ -63,4 +63,15 @@ p{
         -o-font-smoothing: antialiased;
         font-smoothing: antialiased;
 }
+.incomplete{
+        opacity:0.3;
+       
+}
+.incomplete:hover{
+        opacity:0.8;
+}
+.checkIcon{
+       position:absolute;
+        right:3px;top:3px;  
+}
 

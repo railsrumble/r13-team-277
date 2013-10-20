@@ -14,15 +14,17 @@
             </form>
         
         <section ng-show="todos.length" ng-cloak>
-            <input type="checkbox" ng-model="allCompleted" ng-click="completeAll(allCompleted)">
-            <label for="toggle-all">Mark all as complete</label>
+            <button type="button" ng-click="completeAll()" class="btn btn-default">Mark all as complete</button>
+            
             <ul class= "sticky">
                 <li ng-repeat="todo in todos">
+                    <span class="checkIcon glyphicon glyphicon-ok-circle" ng-click="complete(todo)" ng-class="{incomplete:isPending(todo)}"></span>
                   <a href="#">
                     <h2 ng-dblclick="editTodo(todo)">{{todo.description}}</h2>
-
-                    <p>{{todo.task_type}}</p>
-                    <img src=>
+                    <div class="progress vertical progress-striped active">
+                      <div class="progress-bar progress-bar-danger" style="height: 80%;width:100%"></div>
+                    </div>
+                    <img src="images/types/{{todo.task_type}}.png">
                 </a>
             </li></ul>
 
