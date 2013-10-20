@@ -23,7 +23,7 @@
         <section ng-show="todos.length" ng-cloak>
             <button type="button" ng-disabled="allCompleted" ng-click="completeAll()" class="btn btn-default">Mark all as complete</button>
             
-            <ul class= "sticky">
+            <ul ui-sortable class= "sticky">
                 <li ng-repeat="todo in todos" ng-class="{done:isCompleted(todo)}">
                     <span class="checkIcon glyphicon glyphicon-ok-circle" ng-click="complete(todo)" ng-class="{incomplete:isPending(todo)}"></span>
                      <span class="deleteIcon glyphicon glyphicon-remove-circle" ng-click="delete(todo)" ng-class="{incomplete:isPending(todo)}"></span>
@@ -49,4 +49,6 @@
 <script src="js/vendor/angular-resource.js"></script>
 <script src="js/main.js"></script>
 <script src="js/controllers/toDoController.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/directives/sortable.js"></script>
 

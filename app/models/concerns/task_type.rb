@@ -113,6 +113,7 @@ module TaskType
   
   def update_task_type
     self.task_type = find_image(self.description)
+    self.weight = IMAGES[self.task_type.to_sym][:weight]
   end
 
   included do
