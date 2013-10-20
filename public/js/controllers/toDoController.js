@@ -17,14 +17,10 @@
 
     $scope.$watch('todos', function (newValue, oldValue)
     {
-        console.log(todos)
         $scope.pendingCount = filterFilter(todos, { completed: false }).length;
         $scope.completedCount = todos.length - $scope.pendingCount;
         $scope.allCompleted = !$scope.pendingCount;
-        if (newValue !== oldValue)
-        { // This prevents unneeded calls to the local storage
-            //todoStorage.put(todos);
-        }
+        
     }, true);
 
     
