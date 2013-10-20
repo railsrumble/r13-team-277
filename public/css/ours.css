@@ -95,6 +95,7 @@ body{
 
 }
 .checkIcon,.deleteIcon{
+        cursor:pointer;
        position:absolute;
         top:3px;  
 
@@ -109,6 +110,7 @@ body{
 }
 ul.sticky{
   overflow:hidden;
+  cursor:move;
 font-family:"Reenie Beanie",arial,sans-serif;
   padding:3em;
 }
