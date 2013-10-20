@@ -1,0 +1,11 @@
+body
+{
+background-image:url('/images/bg.jpg');
+background-color:#cccccc;
+background-size: 100%;
+
+} 
+p{
+
+	background-color: blue;
+}
