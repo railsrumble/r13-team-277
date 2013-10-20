@@ -1,4 +1,3 @@
-require 'pry'
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
@@ -25,8 +24,9 @@ class TasksController < ApplicationController
   # POST /tasks
   # POST /tasks.json
   def create
-    @task = Task.new(task_params)
-    @task.user_id = current_user.id
+    params = task_params.merge({:user => current_user, :category => Category.first})
+    @task = Task.new(params)
+    
     respond_to do |format|
       if @task.save
         format.html { redirect_to @task, notice: 'Task was successfully created.' }
@@ -70,6 +70,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:description, :task_type, :priority, :time, :user_id, :category)
+      params.require(:task).permit(:description, :task_type, :priority, :time, :user, :category)
     end
 end

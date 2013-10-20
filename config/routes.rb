@@ -1,12 +1,13 @@
 Railsrumble::Application.routes.draw do
   get "home/index"
   resources :tasks
+  
+  devise_for :users
+  
   resources :users, :only => [:show, :edit, :update]
   
   root :to => "home#index"
   get 'app' => 'home#app'
-
-  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
