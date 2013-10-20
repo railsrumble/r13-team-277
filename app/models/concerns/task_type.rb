@@ -85,6 +85,10 @@ module TaskType
     code: {
       keywords: ['code', 'program'],
       weight: 2.hours
+    },
+    none: {
+      keywords: [],
+      weight: 0
     }
   }
   
@@ -109,8 +113,6 @@ module TaskType
   
   def update_task_type
     self.task_type = find_image(self.description)
-    self.weight = 0
-    self.weight = IMAGES[self.task_type.to_sym][:weight] if self.task_type
   end
 
   included do
