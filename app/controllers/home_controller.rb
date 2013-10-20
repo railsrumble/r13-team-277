@@ -5,6 +5,7 @@ class HomeController < ApplicationController
   end
   
   def app
+    redirect_to root_path if not user_signed_in?
   end
   
   def sign_in_as_guest
