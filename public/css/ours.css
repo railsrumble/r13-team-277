@@ -94,9 +94,18 @@ body{
         opacity:0.8;
 
 }
-.checkIcon{
+.checkIcon,.deleteIcon{
        position:absolute;
-        right:3px;top:3px;  
+        top:3px;  
+
+}
+.checkIcon{
+       color:green;
+        right:3px;
+}
+.deleteIcon{
+       color:red;
+        left:3px;
 }
 ul.sticky{
   overflow:hidden;

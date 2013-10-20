@@ -26,6 +26,7 @@
             <ul class= "sticky">
                 <li ng-repeat="todo in todos" ng-class="{done:isCompleted(todo)}">
                     <span class="checkIcon glyphicon glyphicon-ok-circle" ng-click="complete(todo)" ng-class="{incomplete:isPending(todo)}"></span>
+                     <span class="deleteIcon glyphicon glyphicon-remove-circle" ng-click="delete(todo)" ng-class="{incomplete:isPending(todo)}"></span>
                     <h2 ng-dblclick="editTodo(todo)">{{todo.description}}</h2>
                     
                     <img src="/images/types/{{todo.task_type}}.png">
