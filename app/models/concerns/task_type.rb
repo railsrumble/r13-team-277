@@ -101,19 +101,22 @@ module TaskType
         matches = matches + [keyword]
       end
     end
-    image_lookup(matches.first)
+    image_lookup(matches)
   end
   
   def image_lookup(keyword)
+    matches = []
     IMAGES.each do |image, keywords|
-      return image.to_s if keywords[:keywords].include? keyword
+      matches << image.to_s unless (keywords[:keywords] & keyword).empty?
     end
-    return "none"
+    matches << "none" if matches.empty?
+    matches = matches[1..4] if matches.length > 4
+    return matches
   end
   
   def update_task_type
     self.task_type = find_image(self.description)
-    self.weight = IMAGES[self.task_type.to_sym][:weight]
+    self.weight = IMAGES[self.task_type.first.to_sym][:weight]
   end
 
   included do

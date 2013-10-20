@@ -149,13 +149,17 @@ ul.sticky li{
   -o-transform: rotate(-6deg);
   -moz-transform:rotate(-6deg);
 }
-ul.sticky li img{
+ul.sticky li .imgHolder{
+  position:absolute;
+  left:3px;
+  bottom:3px;
+  border:none;
+}
+ul.sticky li .imgHolder img{
   height:32px;
   width:32px;
-  float:left;
-  position:absolute;
-  bottom:3px;
-  left:3px;
+  position:relative;
+  margin-right:2px;
   border:none;
 }
 ul.sticky li:nth-child(even){
@@ -204,6 +208,6 @@ li.done h2{
         opacity: .8;
 }
 
-#markcompleted {
-  margin-left: 15px;
+.mark {
+  margin-left: 14px;
 }

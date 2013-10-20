@@ -2,6 +2,7 @@ class Task < ActiveRecord::Base
   include TaskType
   belongs_to :user
   belongs_to :category
+  serialize :task_type
 
   validates_presence_of :user, :description
 
