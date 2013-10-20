@@ -104,6 +104,7 @@ font-family:"Reenie Beanie",arial,sans-serif;
   padding:3em;
 }
 ul.sticky li{
+  position: relative;
   text-decoration:none;
   color:#000;
   background:#ffc;
@@ -131,7 +132,6 @@ ul.sticky li h2{
   word-wrap:break-word;
 }
 
-<<<<<<< HEAD
 ul.sticky li{
   -webkit-transform: rotate(-6deg);
   -o-transform: rotate(-6deg);
@@ -180,15 +180,14 @@ ul.sticky li:hover,ul.sticky li:focus{
   z-index:5;
 }
 li.done{
-        background:#080808;
+        background:#000000;
+        opacity: 0.5;
 }
 li.done h2{
   text-decoration: line-through;
 }
-=======
 .todoInput:focus{
 
         background: white;
         opacity: .8;
 }
->>>>>>> ecfc09c19969bda71fc86d819fc4db2ea4be766d

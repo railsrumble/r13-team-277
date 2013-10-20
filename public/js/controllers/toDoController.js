@@ -70,7 +70,10 @@
     {
         todos.forEach(function (todo)
         {
-            complete();
+          if(todo.completed === false){
+            todo.completed = true;
+            todo.$update();
+          }
         });
         
     };
