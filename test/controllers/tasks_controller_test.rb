@@ -3,6 +3,7 @@ require 'test_helper'
 class TasksControllerTest < ActionController::TestCase
   setup do
     @task = tasks(:one)
+    sign_in users(:one)
   end
 
   test "should get index" do
@@ -18,7 +19,7 @@ class TasksControllerTest < ActionController::TestCase
 
   test "should create task" do
     assert_difference('Task.count') do
-      post :create, task: { description: @task.description, priority: @task.priority, time: @task.time, type: @task.type }
+      post :create, task: { description: @task.description, priority: @task.priority, time: @task.time, task_type: @task.task_type }
     end
 
     assert_redirected_to task_path(assigns(:task))
@@ -35,7 +36,7 @@ class TasksControllerTest < ActionController::TestCase
   end
 
   test "should update task" do
-    patch :update, id: @task, task: { description: @task.description, priority: @task.priority, time: @task.time, type: @task.type }
+    patch :update, id: @task, task: { description: @task.description, priority: @task.priority, time: @task.time, task_type: @task.task_type, user_id: User.first.id}
     assert_redirected_to task_path(assigns(:task))
   end
 

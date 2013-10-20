@@ -2,12 +2,12 @@
 
 one:
   description: MyString
-  type: 
   priority: 1
   time: 2013-10-19 10:39:51
+  user_id: 1
 
 two:
   description: MyString
-  type: 
   priority: 1
   time: 2013-10-19 10:39:51
+  user_id: 1

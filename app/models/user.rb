@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :categories, :dependent => :destroy
-  has_many :tasks, :order => :priority, :through => :categories, :dependent => :destroy
+  has_many :tasks, :through => :categories, :dependent => :destroy
 
   validates :email, :presence => true
 

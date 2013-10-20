@@ -1,6 +1,7 @@
 Railsrumble::Application.routes.draw do
   get "home/index"
   resources :tasks
+  resources :users, :only => [:show, :edit, :update]
   
   root :to => "home#index"
   get 'app' => 'home#app'
