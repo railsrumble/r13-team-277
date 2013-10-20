@@ -99,3 +99,8 @@ body{
         right:3px;top:3px;  
 }
 
+.todoInput:focus{
+
+        background: white;
+        opacity: .8;
+}
