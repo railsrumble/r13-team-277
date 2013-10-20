@@ -14,5 +14,5 @@ class UsersControllerTest < ActionController::TestCase
   test "should update user" do
     patch :update, id: @user, user: { email: @user.email, name: @user.name }
     assert_redirected_to controller: "home", action: "app", notice: "User was successfully updated."
-  
+  end
 end
