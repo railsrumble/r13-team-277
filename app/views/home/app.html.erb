@@ -18,13 +18,11 @@
             <button type="button" ng-click="completeAll()" class="btn btn-default">Mark all as complete</button>
             
             <ul class= "sticky">
-                <li ng-repeat="todo in todos">
+                <li ng-repeat="todo in todos" ng-class="{done:isComplete(todo)}">
                     <span class="checkIcon glyphicon glyphicon-ok-circle" ng-click="complete(todo)" ng-class="{incomplete:isPending(todo)}"></span>
                   <a href="#">
                     <h2 ng-dblclick="editTodo(todo)">{{todo.description}}</h2>
-                    <div class="progress vertical progress-striped active">
-                      <div class="progress-bar progress-bar-danger" style="height: 80%;width:100%"></div>
-                    </div>
+                    
                     <img src="images/types/{{todo.task_type}}.png">
                 </a>
             </li></ul>
