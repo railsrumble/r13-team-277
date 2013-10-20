@@ -19,10 +19,9 @@ class TasksControllerTest < ActionController::TestCase
 
   test "should create task" do
     assert_difference('Task.count') do
-      post :create, task: { description: @task.description, priority: @task.priority, time: @task.time, task_type: @task.task_type }
+      post :create, task: { description: @task.description, priority: @task.priority, time: @task.time, task_type: @task.task_type }, format: 'json'
     end
-
-    assert_redirected_to task_path(assigns(:task))
+    assert_response :success
   end
 
   test "should show task" do
