@@ -55,10 +55,15 @@ span{
 p{
 
 }
+body{
+
+        background-image: url('/images/bg.jpg');
+        background-size: 100%;
+        
+}
 .todoInput
  {
         height:3em;
-
         width: 100%;
         font-size: 2.4em;
         font-family: inherit;
@@ -84,8 +89,10 @@ p{
         opacity:0.3;
        
 }
+
 .incomplete:hover{
         opacity:0.8;
+
 }
 .checkIcon{
        position:absolute;
