@@ -109,7 +109,8 @@ module TaskType
   
   def update_task_type
     self.task_type = find_image(self.description)
-    self.weight = IMAGES[self.task_type.to_sym][:weight]
+    self.weight = 0
+    self.weight = IMAGES[self.task_type.to_sym][:weight] if self.task_type
   end
 
   included do
