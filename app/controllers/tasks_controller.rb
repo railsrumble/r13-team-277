@@ -24,9 +24,8 @@ class TasksController < ApplicationController
   # POST /tasks
   # POST /tasks.json
   def create
-    params = task_params.merge({:user => current_user, :category => Category.first})
+    params = task_params.merge({:user_id => current_user.id})
     @task = Task.new(params)
-    
     respond_to do |format|
       if @task.save
         format.html { redirect_to @task, notice: 'Task was successfully created.' }

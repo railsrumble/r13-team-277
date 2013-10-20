@@ -6,4 +6,10 @@ class HomeController < ApplicationController
   
   def app
   end
+  
+  def sign_in_as_guest
+    guest = User.find_or_create_by_name(name: "Guest", password: "guest123", email:"email@guest.com")
+    sign_in guest
+    redirect_to action: 'app'
+  end
 end

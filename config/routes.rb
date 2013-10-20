@@ -4,10 +4,11 @@ Railsrumble::Application.routes.draw do
   
   devise_for :users
   
-  resources :users, :only => [:show, :edit, :update]
+  resources :users, :only => [:edit, :update]
   
   root :to => "home#index"
   get 'app' => 'home#app'
+  get 'guest' => "home#sign_in_as_guest"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

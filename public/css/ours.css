@@ -21,20 +21,36 @@
 
 }
 
+.jumbotron{
 
-*
+        opacity: 0.8;
+
+}
+
+h1,h2, h5, label, div
 {
         font-family: 'nexa_lightregular';  
+        opacity: 1;
          
+}
+h1{
+
 }
 
 a.navbar-brand span{
-        font-size: 1em;
+        font-family: 'nexa_lightregular';  
+        font-size: 1.5em;
+        font-style: bold;
+        line-height:32px;
+        vertical-align: middle;
         
 }
 
+
+
 span{
-        color: #006699;     
+        color: #007A99;     
+
 }
 p{
 
@@ -42,6 +58,7 @@ p{
 .todoInput
  {
         height:3em;
+
         width: 100%;
         font-size: 2.4em;
         font-family: inherit;

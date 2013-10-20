@@ -9,4 +9,12 @@ class Task < ActiveRecord::Base
   	self.completed = true
   	save
   end
+  
+  def category_name
+    if self.category
+      return self.category.name
+    else
+      return ""
+    end
+  end
 end
