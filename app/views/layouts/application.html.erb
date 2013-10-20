@@ -17,8 +17,6 @@
 <body>
   <%= render 'layouts/nav_bar' %>
 
-  <div class="jumbotron">
-
     <% if notice  %>
     <p class="alert alert-info"><%= notice %></p>
     <% end %>
@@ -26,9 +24,7 @@
     <p class="alert alert-danger"><%= alert %></p>
     <% end %>
 
-    <%= yield %>
-
-  </div>   
+    <%= yield %>   
 
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="js/vendor/bootstrap.min.js"></script>
