@@ -12,7 +12,7 @@
             <section ng-controller="TodoController">
 
             <form  role="search" class="navbar-form" ng-submit="createTodo()">
-                <input  class="form-control todoInput" placeholder="New Task" ng-model="newTodo" autofocus />
+                <input  class="form-control todoInput" placeholder="New Task" ng-model="newTodo" autofocus maxlength="60" />
                 <div class="btn-group" data-toggle="buttons" ng-repeat="priority in priorties">
           <label class="btn btn-primary">
             <input type="radio" name="priorties"  value="{{priority.priority}}"> {{priority.text}}
