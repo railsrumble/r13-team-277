@@ -13,44 +13,39 @@ body{
 
             <form  role="search" class="navbar-form" ng-submit="createTodo()">
                 <input  class="form-control todoInput" placeholder="New Task" ng-model="newTodo" autofocus />
-                <div class="btn-group" data-toggle="buttons" ng-repeat="priority in priorties">
-                  <label class="btn btn-primary">
-                    <input type="radio" name="priorties"  value="{{priority.priority}}"> {{priority.text}}
-                </label>
-            </div>
-        </form>
-        <button type="button" ng-disabled="allCompleted" ng-click="completeAll()" class="btn btn-default mark">Mark all as complete</button>
+            </form>
+            <button type="button" ng-disabled="allCompleted" ng-click="completeAll()" class="btn btn-default mark">Mark all as complete</button>
 
-        <section ng-show="todos.length" ng-cloak>
+            <section ng-show="todos.length" ng-cloak>
 
-            <ul ui-sortable class= "sticky">
-                <li ng-repeat="todo in todos" ng-class="{done:isCompleted(todo)}">
-                    <span class="checkIcon glyphicon glyphicon-ok-circle" ng-click="complete(todo)" ng-class="{incomplete:isPending(todo)}"></span>
-                    <span class="deleteIcon glyphicon glyphicon-remove-circle" ng-click="delete(todo)" ng-class="{incomplete:isPending(todo)}"></span>
-                    <h2 ng-dblclick="editTodo(todo)">{{todo.description}}</h2>
-                    
-                    <div class = "imgHolder">
-                        <img ng-repeat="type in todo.task_type" src="/images/types/{{type}}.png">
-                    </div>
-                </li></ul>
+                <ul ui-sortable class= "sticky">
+                    <li ng-repeat="todo in todos" ng-class="{done:isCompleted(todo)}">
+                        <span class="checkIcon glyphicon glyphicon-ok-circle" ng-click="complete(todo)" ng-class="{incomplete:isPending(todo)}"></span>
+                        <span class="deleteIcon glyphicon glyphicon-remove-circle" ng-click="delete(todo)" ng-class="{incomplete:isPending(todo)}"></span>
+                        <h2 ng-dblclick="editTodo(todo)">{{todo.description}}</h2>
+                        
+                        <div class = "imgHolder">
+                            <img ng-repeat="type in todo.task_type" src="/images/types/{{type}}.png">
+                        </div>
+                    </li></ul>
 
 
 
+                </section>
+                <footer id="footer" ng-show="todos.length" ng-cloak>
+                    <span id="todo-count"><strong>{{pendingCount}}</strong>
+                        <ng-pluralize count="pendingCount" when="{ one: 'item left', other: 'items pending' }"></ng-pluralize>
+                    </span>
+
+
+                </footer>
             </section>
-            <footer id="footer" ng-show="todos.length" ng-cloak>
-                <span id="todo-count"><strong>{{pendingCount}}</strong>
-                    <ng-pluralize count="pendingCount" when="{ one: 'item left', other: 'items pending' }"></ng-pluralize>
-                </span>
-
-
-            </footer>
-        </section>
+        </div>
+        
     </div>
-    
-</div>
-<script src="js/vendor/angular-resource.js"></script>
-<script src="js/main.js"></script>
-<script src="js/controllers/toDoController.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-<script type="text/javascript" src="js/directives/sortable.js"></script>
+    <script src="js/vendor/angular-resource.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/controllers/toDoController.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/directives/sortable.js"></script>
 
