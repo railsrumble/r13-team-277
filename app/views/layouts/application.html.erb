@@ -1,39 +1,47 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>TODO App</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="/css/overrides.css" rel="stylesheet" media="screen">
-    <%= javascript_include_tag "application" %>
-    <%= csrf_meta_tags %>
+<head>
+  <title>TODO App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="/css/overrides.css" rel="stylesheet" media="screen">
+  <link  href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet" type="text/css"> 
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="../../assets/js/html5shiv.js"></script>
-      <script src="../../assets/js/respond.min.js"></script>
-    <![endif]-->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-  </head>
-  <body>
-    <%= render 'layouts/nav_bar' %>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+</head>
+<body>
+  <%= render 'layouts/nav_bar' %>
 
-    <div class="jumbotron">
-      
-      <% if notice  %>
-      <p class="alert alert-info"><%= notice %></p>
-      <% end %>
-      <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
-      <% end %>
+  <div class="jumbotron">
 
-      <%= yield %>
-      
-    </div>   
+    <% if notice  %>
+    <p class="alert alert-info"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
 
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/vendor/bootstrap.min.js"></script>
-  </body>
+    <%= yield %>
+
+  </div>   
+
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/vendor/bootstrap.min.js"></script>
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  <script>
+  (function (b, o, i, l, e, r)
+  {
+    b.GoogleAnalyticsObject = l; b[l] || (b[l] =
+      function () { (b[l].q = b[l].q || []).push(arguments) }); b[l].l = +new Date;
+    e = o.createElement(i); r = o.getElementsByTagName(i)[0];
+    e.src = '//www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e, r)
+  }(window, document, 'script', 'ga'));
+  ga('create', 'UA-XXXXX-X'); ga('send', 'pageview');
+  </script>
+</body>
 </html>

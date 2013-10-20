@@ -1,2 +1,2 @@
 'use strict';
-var todomvc = angular.module('todomvc', []);
+var toDoApp = angular.module('toDoApp', ['ngResource']);

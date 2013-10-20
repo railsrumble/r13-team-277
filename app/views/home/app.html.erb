@@ -1,57 +1,37 @@
-<section id="todoapp" ng-controller="TodoCtrl">
-        <header id="header">
-           
-            <form id="todo-form" class="navbar-search pull-left" ng-submit="addTodo()">
-                <input id="new-todo" class="search-query" placeholder="To Do" ng-model="newTodo" autofocus>
+<link href="/css/ours.css" rel="stylesheet" media="screen">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+<div ng-app="toDoApp">
+    <section ng-controller="TodoController">
+        <header>
+
+            <form  role="search" class="navbar-form pull-left" ng-submit="createTodo()">
+                <input  class="form-control" placeholder="To Do" ng-model="newTodo" autofocus>
             </form>
         </header>
-        <section id="main" ng-show="todos.length" ng-cloak>
-            <input id="toggle-all" type="checkbox" ng-model="allChecked" ng-click="markAll(allChecked)">
+        <section ng-show="todos.length" ng-cloak>
+            <input type="checkbox" ng-model="allCompleted" ng-click="completeAll(allCompleted)">
             <label for="toggle-all">Mark all as complete</label>
-            <ul id="todo-list">
-                <li ng-repeat="todo in todos | filter:statusFilter" ng-class="{completed: todo.completed, editing: todo == editedTodo}">
-                    <div class="view">
-                        <input class="toggle" type="checkbox" ng-model="todo.completed">
-                        <label ng-dblclick="editTodo(todo)">{{todo.title}}</label>
-                        <button class="destroy" ng-click="removeTodo(todo)"></button>
-                    </div>
-                    <form ng-submit="doneEditing(todo)">
-                        <input class="edit" ng-model="todo.title" todo-escape="revertEditing(todo)" todo-blur="doneEditing(todo)" todo-focus="todo == editedTodo">
-                    </form>
-                </li>
-            </ul>
+            <ul class= "sticky">
+                <li ng-repeat="todo in todos">
+                  <a href="#">
+                    <h2 ng-dblclick="editTodo(todo)">{{todo.description}}</h2>
+
+                    <p>{{todo.task_type}}</p>
+                </a>
+            </li></ul>
+
+
         </section>
         <footer id="footer" ng-show="todos.length" ng-cloak>
-            <span id="todo-count"><strong>{{remainingCount}}</strong>
-                <ng-pluralize count="remainingCount" when="{ one: 'item left', other: 'items left' }"></ng-pluralize>
+            <span id="todo-count"><strong>{{pendingCount}}</strong>
+                <ng-pluralize count="pendingCount" when="{ one: 'item left', other: 'items pending' }"></ng-pluralize>
             </span>
-            <ul id="filters">
-                <li>
-                    <a ng-class="{selected: location.path() == '/'} " href="#/">All</a>
-                </li>
-                <li>
-                    <a ng-class="{selected: location.path() == '/active'}" href="#/active">Active</a>
-                </li>
-                <li>
-                    <a ng-class="{selected: location.path() == '/completed'}" href="#/completed">Completed</a>
-                </li>
-            </ul>
-            <button id="clear-completed" ng-click="clearCompletedTodos()" ng-show="completedCount">Clear completed ({{completedCount}})</button>
+            
+            
         </footer>
     </section>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
- <script src="js/main.js"></script>
-    <script src="js/controllers/toDoController.js"></script>
-    <script src="js/services/toDoService.js"></script>
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-        (function (b, o, i, l, e, r)
-        {
-            b.GoogleAnalyticsObject = l; b[l] || (b[l] =
-            function () { (b[l].q = b[l].q || []).push(arguments) }); b[l].l = +new Date;
-            e = o.createElement(i); r = o.getElementsByTagName(i)[0];
-            e.src = '//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e, r)
-        }(window, document, 'script', 'ga'));
-        ga('create', 'UA-XXXXX-X'); ga('send', 'pageview');
-        </script>
+</div>
+<script src="js/vendor/angular-resource.js"></script>
+<script src="js/main.js"></script>
+<script src="js/controllers/toDoController.js"></script>
+
