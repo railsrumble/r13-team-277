@@ -44,6 +44,7 @@ end
 gem 'capistrano', '~> 2.15'
 
 group :production do
+  gem 'mysql2'
   gem 'therubyracer'
 end
 
