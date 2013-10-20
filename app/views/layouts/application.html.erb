@@ -19,6 +19,7 @@
   <body>
     <%= render 'layouts/nav_bar' %>
     <% if notice  %>
+    <div class="container">
     <p class="alert alert-info"><%= notice %></p>
     <% end %>
     <% if alert %>
@@ -26,7 +27,7 @@
     <% end %>
 
     <%= yield %>
-    
+    </div>
    
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/vendor/bootstrap.min.js"></script>
