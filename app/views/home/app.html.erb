@@ -1,35 +1,39 @@
 <link href="/css/ours.css" rel="stylesheet" media="screen">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
-<div ng-app="toDoApp">
-    <section ng-controller="TodoController">
-        
+ <div class = "container">
+    <div class = "jumbotron">
+        <div ng-app="toDoApp">
+            <section ng-controller="TodoController">
+                
 
-            <form  role="search" class="navbar-form" ng-submit="createTodo()">
-                <input  class="form-control todoInput" placeholder="To Do" ng-model="newTodo" autofocus />
-            </form>
-        
-        <section ng-show="todos.length" ng-cloak>
-            <input type="checkbox" ng-model="allCompleted" ng-click="completeAll(allCompleted)">
-            <label for="toggle-all">Mark all as complete</label>
-            <ul class= "sticky">
-                <li ng-repeat="todo in todos">
-                  <a href="#">
-                    <h2 ng-dblclick="editTodo(todo)">{{todo.description}}</h2>
+                    <form  role="search" class="navbar-form" ng-submit="createTodo()">
+                        <input  class="form-control todoInput" placeholder="To Do" ng-model="newTodo" autofocus />
+                    </form>
+                
+                <section ng-show="todos.length" ng-cloak>
+                    <input type="checkbox" ng-model="allCompleted" ng-click="completeAll(allCompleted)">
+                    <label for="toggle-all">Mark all as complete</label>
+                    <ul class= "sticky">
+                        <li ng-repeat="todo in todos">
+                          <a href="#">
+                            <h2 ng-dblclick="editTodo(todo)">{{todo.description}}</h2>
 
-                    <p>{{todo.task_type}}</p>
-                </a>
-            </li></ul>
+                            <p>{{todo.task_type}}</p>
+                        </a>
+                    </li></ul>
 
 
-        </section>
-        <footer id="footer" ng-show="todos.length" ng-cloak>
-            <span id="todo-count"><strong>{{pendingCount}}</strong>
-                <ng-pluralize count="pendingCount" when="{ one: 'item left', other: 'items pending' }"></ng-pluralize>
-            </span>
-            
-            
-        </footer>
-    </section>
+                </section>
+                <footer id="footer" ng-show="todos.length" ng-cloak>
+                    <span id="todo-count"><strong>{{pendingCount}}</strong>
+                        <ng-pluralize count="pendingCount" when="{ one: 'item left', other: 'items pending' }"></ng-pluralize>
+                    </span>
+                    
+                    
+                </footer>
+            </section>
+        </div>
+    </div>
 </div>
 <script src="js/vendor/angular-resource.js"></script>
 <script src="js/main.js"></script>
